@@ -231,38 +231,6 @@ Returns JSON with a `prediction_text` field. The sample values are **illustrativ
 
 > **Label warning:** Review the mapping from dataset `Classification` values to human-readable disease labels before using the API. The code currently checks `prediction[0] == 0`; that comparison may not match the source dataset's actual coding.
 
-## Evaluation and Reproducibility
-
-Before using results in a report or portfolio:
-
-1. Document dataset provenance, size, class definitions, and feature units.
-2. Fit scalers **only on training folds**, never on the complete dataset before splitting.
-3. Report sensitivity, specificity, ROC-AUC, F1, and confusion matrices in addition to accuracy.
-4. Check patient-level leakage, demographic subgroup performance, and external validation.
-5. Save trained models together with fitted scalers and versioned metadata.
-6. Do not interpret model outputs as calibrated clinical probabilities without calibration analysis.
-
-## Suggested Screenshots
-
-After confirming the app runs, add real screenshots in `docs/screenshots/` and uncomment the links below:
-
-```markdown
-<!-- ![Landing page](docs/screenshots/landing.png) -->
-<!-- ![Breast cancer input form](docs/screenshots/breast-cancer-form.png) -->
-<!-- ![Prediction result](docs/screenshots/prediction-result.png) -->
-<!-- ![Multilingual interface](docs/screenshots/hindi-interface.png) -->
-```
-
-
-## Future Improvements
-
-- Build a unified inference API for both disease pipelines.
-- Add reproducible dependency and dataset manifests.
-- Validate the VGG19 image-inference workflow end to end.
-- Introduce stronger evaluation and calibrated uncertainty reporting.
-- Add automated tests, input validation, access controls, and privacy protections.
-- Publish documented benchmark results and genuine application screenshots.
-
 
 <div align="center">
   <strong>SpectraScan — exploring accessible, responsible machine learning for health research.</strong>
